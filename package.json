@@ -1,0 +1,61 @@
+{
+  "name": "hotle-billing",
+  "version": "1.0.0",
+  "description": "Desktop billing software for pople amrutatylya",
+  "main": "desktop/electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder --win portable nsis",
+    "android:add": "cap add android",
+    "android:sync": "cap sync android",
+    "android:open": "cap open android"
+  },
+  "keywords": [
+    "billing",
+    "electron",
+    "desktop-app",
+    "restaurant-pos"
+  ],
+  "author": "pople amrutatylya",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/core": "^7.4.3",
+    "electron": "^41.1.0",
+    "electron-builder": "^26.8.1"
+  },
+  "build": {
+    "appId": "com.pople.amrutatylya.billing",
+    "productName": "Pople Amrutatylya Billing",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "desktop/**/*",
+      "app/pages/**/*"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.3.0",
+    "@capacitor/camera": "^7.0.5",
+    "@capacitor/cli": "^8.3.0",
+    "@capacitor/core": "^8.3.0",
+    "@capacitor/filesystem": "^7.1.8",
+    "@capacitor/share": "^7.0.4"
+  }
+}
